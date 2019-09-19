@@ -37,6 +37,7 @@ export default {
       flex: 1
       margin-top: .12rem
       margin-left: .2rem
+      padding-left: .2rem
       height: .64rem
       line-height: .64rem
       background: #fff

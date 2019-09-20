@@ -32,7 +32,7 @@ export default {
         desc: "位于南京市玄武区钟山风景名胜区"
       },{
         id: '0002',
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1411/bb/538133c76765880a3d3c802e45015c57.water.jpg_200x200_169b048c.jpg",
+        imgUrl: "http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg",
         title: "银杏湖乐园",
         desc: "位于南京市江宁区银杏湖大道520号"
       },{

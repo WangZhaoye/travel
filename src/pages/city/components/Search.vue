@@ -49,6 +49,7 @@ export default {
     handleCityClick(city){
       this.$store.dispatch('changeCity',city)
       this.keyword=''
+      this.$router.push('/')
     }
   },
   watch: {

@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -19,51 +19,22 @@
 <script>
 export default {
   name: 'HomeIcons',
-  data() {
+  props:{
+    list: Array
+  },
+  data(){
     return {
-      iconList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票景点门票景点门票'
-      },{
-        id: '0002',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/94f7f5bf7b0f4d238dd68d718f102f40.png',
-        desc: '中山陵'
-      },{
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-        desc: '文化古迹'
-      },{
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-        desc: '牛首山'
-      },{
-        id: '0005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        desc: '景点门票'
-      },{
-        id: '0006',
-        imgUrl: 'http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20194/94f7f5bf7b0f4d238dd68d718f102f40.png',
-        desc: '中山陵'
-      },{
-        id: '0007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png',
-        desc: '文化古迹'
-      },{
-        id: '0008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-        desc: '牛首山'
-      },{
-        id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/97/02f5043b51b2102.png',
-        desc: '牛首山'
-      }]
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true,
+        autoplay: false
+      }
     }
   },
   computed: {
     pages (){
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if(!pages[page]){
           pages[page] = []

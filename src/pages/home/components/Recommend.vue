@@ -4,7 +4,7 @@
   热销推荐
   </div>
   <ul>
-    <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+    <li class="item border-bottom" v-for="item of list" :key="item.id">
       <img class="item-img" :src="item.imgUrl" />
       <div class="item-info">
         <p class="item-title">{{item.title}}</p>
@@ -23,28 +23,9 @@
 
 export default {
   name: 'HomeRecommend',
-  data() {
-    return {
-        recommendList:[{
-        id: '0001',
-        imgUrl: "http://img1.qunarzz.com/sight/p18/201211/03/db9f2bb27ee40bf893835fbb.jpg_200x200_cf1de8d6.jpg",
-        title: "美龄宫",
-        desc: "位于南京市玄武区钟山风景名胜区"
-      },{
-        id: '0002',
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg",
-        title: "银杏湖乐园",
-        desc: "位于南京市江宁区银杏湖大道520号"
-      },{
-        id: '0003',
-        imgUrl: "http://img1.qunarzz.com/sight/p0/1411/bb/538133c76765880a3d3c802e45015c57.water.jpg_200x200_169b048c.jpg",
-        title: "汤山紫清湖旅游区",
-        desc: "位于南京市江宁区汤山镇"
-      }]
-    }
-    
-  }
-  
+  props:{
+    list: Array
+  } 
   
 }
 </script>

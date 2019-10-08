@@ -9,7 +9,6 @@
       <div class="iconfont header-fixed-back">&#xe669;</div>
     </router-link>
   </div>
-  <div class="content">content</div>
 </div>
 </template>
 
@@ -42,14 +41,14 @@ export default {
   },
   activated(){
     window.addEventListener('scroll', this.handleScroll)
+  },deactivated(){
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
 
 <style lang="stylus" scoped>
 @import '~styles/variables.styl'
-.content
- height: 50rem
 .header-abs
   position: absolute 
   left: .2rem
@@ -75,6 +74,7 @@ export default {
   color: #fff
   background: $bgColor
   font-size: .32rem
+  z-index: 2
   .header-fixed-back
     position: absolute
     top: 0
